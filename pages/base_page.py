@@ -49,6 +49,7 @@ class Page:
     def verify_url(self, expected_text: str):
         actual_url = self.driver.current_url
         assert expected_text in actual_url, f"Expected {expected_text} does not match actual url"
+        # we could also use self.driver.wait.until(expected_conditions.url_contains)
 
     def count_links(self, expected_number: str, *locator):
         actual_number = self.driver.find_elements(*locator)
